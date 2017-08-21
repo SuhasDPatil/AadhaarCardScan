@@ -1,26 +1,110 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12118" systemVersion="16A323" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="FpS-5x-y9I">
+    <device id="retina4_0" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Scan View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ScanViewController" customModule="AadhaarCardScan" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Fbi-tp-0uX">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Scan Aadhar Card" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mk2-T2-odR">
+                                        <rect key="frame" x="91.5" y="34.5" width="138.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="z8I-mq-usc">
+                                        <rect key="frame" x="8" y="26" width="36" height="36"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="51g-AQ-7nQ"/>
+                                            <constraint firstAttribute="height" constant="36" id="N6T-YJ-DHF"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                        <state key="normal" title="&lt;">
+                                            <color key="titleColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="backButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TQb-5c-6PR"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <constraints>
+                                    <constraint firstItem="Mk2-T2-odR" firstAttribute="centerX" secondItem="Fbi-tp-0uX" secondAttribute="centerX" id="2cM-qq-Ah2"/>
+                                    <constraint firstAttribute="height" constant="70" id="7zB-Fq-eNw"/>
+                                    <constraint firstItem="z8I-mq-usc" firstAttribute="leading" secondItem="Fbi-tp-0uX" secondAttribute="leading" constant="8" id="Fvq-SW-jxL"/>
+                                    <constraint firstItem="z8I-mq-usc" firstAttribute="centerY" secondItem="Mk2-T2-odR" secondAttribute="centerY" id="xuJ-3F-CaY"/>
+                                    <constraint firstAttribute="bottom" secondItem="z8I-mq-usc" secondAttribute="bottom" constant="8" id="zoy-pU-Hcb"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kPm-X2-sAG">
+                                <rect key="frame" x="0.0" y="518" width="320" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="dJJ-92-cAg"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="bottomButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jmd-Hm-576"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="kPm-X2-sAG" secondAttribute="bottom" id="6XG-cV-2D3"/>
+                            <constraint firstAttribute="trailing" secondItem="Fbi-tp-0uX" secondAttribute="trailing" id="F2L-wA-dRc"/>
+                            <constraint firstAttribute="trailing" secondItem="kPm-X2-sAG" secondAttribute="trailing" id="I7T-FZ-hVr"/>
+                            <constraint firstItem="Fbi-tp-0uX" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="Nlv-Ln-P14"/>
+                            <constraint firstItem="Fbi-tp-0uX" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="O1S-oO-9Ur"/>
+                            <constraint firstItem="kPm-X2-sAG" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="eMk-f3-89K"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="jxP-T9-7AA"/>
+                    <connections>
+                        <outlet property="backButtton" destination="z8I-mq-usc" id="rPQ-Y9-InC"/>
+                        <outlet property="bottomButton" destination="kPm-X2-sAG" id="PVj-u8-MDD"/>
+                        <outlet property="navBarTitleLabel" destination="Mk2-T2-odR" id="UXQ-Sf-UiG"/>
+                        <outlet property="naviBarView" destination="Fbi-tp-0uX" id="INV-Ny-2p7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1578.75" y="30.633802816901408"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="NJz-jq-IEG">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="FpS-5x-y9I" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <nil key="simulatedTopBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="TMn-vB-zCX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="TB9-Bg-mAT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="5xd-bA-wWW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="812" y="31"/>
         </scene>
     </scenes>
 </document>
